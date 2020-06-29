@@ -9,7 +9,7 @@ function drawImge() {
 
   ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
 
-  var faceArea = 300;
+  var faceArea = 150;
   var pX = canvas.width / 2 - faceArea / 2;
   var pY = canvas.height / 2 - faceArea / 2;
 
@@ -22,7 +22,10 @@ function drawImge() {
   setTimeout(drawImge, 100);
 }
 
-var video = document.querySelector("#webCamera");
-video.onplay = function () {
-  setTimeout(drawImge, 300);
-};
+function play() {
+  var video = document.querySelector("#webCamera");
+  video.onplay = function () {
+    console.log("onPlay");
+    setTimeout(drawImge, 300);
+  };
+}
